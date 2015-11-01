@@ -5,9 +5,6 @@ if (!defined('QA_VERSION')) {
 }
 
 $LIMIT = qa_opt('q2a-only-once-answer-day');	// 閾値：日数
-// for local test START
-//$LIMIT = 34;
-// for local test END
 if (!is_numeric($LIMIT) or $LIMIT == '0') {
 	return;
 }
@@ -25,7 +22,6 @@ $title = "plugin08 title";
 			'^sitename' => qa_opt('site_title')
 		)
 	);
-//$body = "plugin08 body.";
 	sendEmail($title, $body, $handle, $email);
 }
 
